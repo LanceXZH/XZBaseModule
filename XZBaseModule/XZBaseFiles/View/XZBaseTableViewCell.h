@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  XZBaseTableViewCell.h
 //  XZBaseModule
 //
 //  Created by xuzhong on 2018/3/1.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XZBaseModulesTableViewController.h"
-@interface ViewController : XZBaseModulesTableViewController
+
+@interface XZBaseTableViewCell : UITableViewCell
 
 @end
-

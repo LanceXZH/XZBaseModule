@@ -15,6 +15,8 @@
 		7EB27C4F2047D5D000707939 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB27C4E2047D5D000707939 /* main.m */; };
 		7EB27C592047D5D000707939 /* XZBaseModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB27C582047D5D000707939 /* XZBaseModuleTests.m */; };
 		7EB27C642047D5D000707939 /* XZBaseModuleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB27C632047D5D000707939 /* XZBaseModuleUITests.m */; };
+		7EB27C742047D87800707939 /* XZBaseModulesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB27C732047D87800707939 /* XZBaseModulesTableViewController.m */; };
+		7EB27C792047E7B800707939 /* XZBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB27C782047E7B800707939 /* XZBaseTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		7EB27C5F2047D5D000707939 /* XZBaseModuleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XZBaseModuleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB27C632047D5D000707939 /* XZBaseModuleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZBaseModuleUITests.m; sourceTree = "<group>"; };
 		7EB27C652047D5D000707939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EB27C722047D87800707939 /* XZBaseModulesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZBaseModulesTableViewController.h; sourceTree = "<group>"; };
+		7EB27C732047D87800707939 /* XZBaseModulesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZBaseModulesTableViewController.m; sourceTree = "<group>"; };
+		7EB27C752047DBFD00707939 /* XZBaseModulesViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZBaseModulesViewControllerProtocol.h; sourceTree = "<group>"; };
+		7EB27C772047E7B800707939 /* XZBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZBaseTableViewCell.h; sourceTree = "<group>"; };
+		7EB27C782047E7B800707939 /* XZBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZBaseTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +108,7 @@
 		7EB27C3E2047D5D000707939 /* XZBaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				7EB27C712047D80A00707939 /* XZBaseFiles */,
 				7EB27C3F2047D5D000707939 /* AppDelegate.h */,
 				7EB27C402047D5D000707939 /* AppDelegate.m */,
 				7EB27C422047D5D000707939 /* ViewController.h */,
@@ -130,6 +138,26 @@
 				7EB27C652047D5D000707939 /* Info.plist */,
 			);
 			path = XZBaseModuleUITests;
+			sourceTree = "<group>";
+		};
+		7EB27C712047D80A00707939 /* XZBaseFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7EB27C762047E75800707939 /* View */,
+				7EB27C722047D87800707939 /* XZBaseModulesTableViewController.h */,
+				7EB27C732047D87800707939 /* XZBaseModulesTableViewController.m */,
+				7EB27C752047DBFD00707939 /* XZBaseModulesViewControllerProtocol.h */,
+			);
+			path = XZBaseFiles;
+			sourceTree = "<group>";
+		};
+		7EB27C762047E75800707939 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EB27C772047E7B800707939 /* XZBaseTableViewCell.h */,
+				7EB27C782047E7B800707939 /* XZBaseTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB27C442047D5D000707939 /* ViewController.m in Sources */,
+				7EB27C792047E7B800707939 /* XZBaseTableViewCell.m in Sources */,
 				7EB27C4F2047D5D000707939 /* main.m in Sources */,
+				7EB27C742047D87800707939 /* XZBaseModulesTableViewController.m in Sources */,
 				7EB27C412047D5D000707939 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

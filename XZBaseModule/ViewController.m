@@ -15,15 +15,20 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    self.sections = @[@[@"第一天", @"第二天"],@[@"第三天", @"第四天"]];
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *content = self.sections[indexPath.section][indexPath.row];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listCell"];
+        cell.textLabel.text = content;
+    }
+    return cell;
 }
-
 
 @end
