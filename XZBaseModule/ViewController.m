@@ -15,13 +15,13 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    self.sections = @[@[@"第一天", @"第二天"],@[@"第三天", @"第四天"]];
+    self.sections = @[@[@""]];
     [super viewDidLoad];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *content = self.sections[indexPath.section][indexPath.row];
+    NSString *content = @"内容";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listCell"];
     if (!cell) {
