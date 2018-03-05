@@ -19,18 +19,22 @@
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:[self tableViewStyle]];
-    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
     
-//#if TEST || DEBUG
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToDebug)];
-//    tap.numberOfTapsRequired = 5;
-//    [self.tableView addGestureRecognizer:tap];
-//#endif
+    self.sections = @[@[@"Light future"]];
+    
+    [self.view addSubview:self.tableView];
+    //#if TEST || DEBUG
+    //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToDebug)];
+    //    tap.numberOfTapsRequired = 5;
+    //    [self.tableView addGestureRecognizer:tap];
+    //#endif
 }
 
 - (void)viewDidLoad {
@@ -51,6 +55,7 @@
 }
 
 #pragma mark UITableViewDelegate&DataSource
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.sections.count;
@@ -58,11 +63,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.sections[section].count;
+    return [[self.sections objectAtIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listCell"];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+    
+    return cell;
 }
+
+
 @end
+
